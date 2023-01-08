@@ -7,7 +7,7 @@ NETDOM="devnet-0chain.net"
 elif [ "$NETWORK" == "ex1" ] || [ "$NETWORK" == "as1" ] ; then
 NETDOM="testnet-0chain.net"
 else
-NETDOM="0chain.net"
+NETDOM="zus.network"
 fi  
 echo "block_worker: https://${NETWORK}.${NETDOM}/dns" >> config.yaml
 echo "signature_scheme: bls0chain" >> config.yaml
@@ -17,14 +17,14 @@ echo "confirmation_chain_length: 3" >> config.yaml
 echo "max_txn_query: 5" >> config.yaml
 echo "query_sleep_time: 5" >> config.yaml
 echo "Downloading CLI tools.."
-wget https://github.com/0chain/zboxcli/releases/download/v1.3.11/zbox-linux.tar.gz
+wget https://github.com/0chain/zboxcli/releases/download/v1.4.0/zbox-linux.tar.gz
 tar -xvf zbox-linux.tar.gz
 rm zbox-linux.tar.gz
-wget https://github.com/0chain/zwalletcli/releases/download/v1.1.7/zwallet-linux.tar.gz
+wget https://github.com/0chain/zwalletcli/releases/download/v1.2.0/zwallet-linux.tar.gz
 tar -xvf zwallet-linux.tar.gz
 rm zwallet-linux.tar.gz
 echo "Creating Wallet.."
-./zbox getbalance --silent --wallet eve.json --config config.yaml --configDir ./ --json
+./zwallet getbalance --silent --wallet eve.json --config config.yaml --configDir ./ --json
 echo "Fauceting Tokens.."
 i=1 ; while [ $i -le 5 ] ; do  ./zwallet faucet --methodName pour --input test --silent --wallet eve.json --config config.yaml --configDir ./ --tokens 9 ; ((i++)) ; done
 echo "Creating Allocation.."

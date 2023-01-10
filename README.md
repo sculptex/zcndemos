@@ -10,4 +10,4 @@ Proxy Re-Encryption Demo 1
 `pre/mac` folder
 
 Proxy Re-Encryption Demo 2 (Audio Description and Linux / MacOs interoperability)
-[![Video](https://github.com/sculptex/zcndemos/blob/main/pre/macos/adamevenew1.mp4)]
+[![Video](https://raw.githubusercontent.com/sculptex/zcndemos/main/pre/macos/adamevenew1.mp4)]
